@@ -2,6 +2,9 @@
 
 #include "UnaryNode.h"
 
+// TanNode Class ( Claculates the tangent of a node. ):
+
+// Check the Node.h file for function definitions
 class TanNode : public UnaryNode {
 public:
 	TanNode(Node* a) :UnaryNode(a, std::string("tan")) {}

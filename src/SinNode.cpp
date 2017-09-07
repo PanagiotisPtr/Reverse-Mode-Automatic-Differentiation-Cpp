@@ -2,12 +2,16 @@
 
 #include "SinNode.h"
 
+// Sine: f(x) = sin(x)
 void SinNode::forwardProp() { m_val = sin(prev->get_val()); }
 
+// Sine derivateve: df/dx = cos(x)
 void SinNode::backwardProp(bool first) {
 	if (first)m_grad = 1;
+	// Chain rule
 	double new_grad = prev->get_grad() + cos(prev->get_val()) * m_grad;
 	prev->set_grad(new_grad);
+	// Recursively calling backwardProp for every node
 	prev->backwardProp();
 }
 

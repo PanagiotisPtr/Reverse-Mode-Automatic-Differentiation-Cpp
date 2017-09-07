@@ -2,6 +2,9 @@
 
 #include "BinaryNode.h"
 
+// MulNode Class ( Performs multiplication of 2 nodes. ):
+
+// Check the Node.h file for function definitions
 class MulNode : public BinaryNode {
 public:
 	MulNode(Node* a, Node* b) :BinaryNode(a, b, std::string("mul")) {}

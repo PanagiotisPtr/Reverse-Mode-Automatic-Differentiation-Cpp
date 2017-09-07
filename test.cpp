@@ -10,6 +10,7 @@ using namespace std;
 
 int main() {
 	cout << "Running tests..." << endl;
+	// The following test is used to measure memory leaks and time complexity
 	for (int i = 1; i <= 20000; i++) {
 		Node x("x");
 		float e = exp(1);

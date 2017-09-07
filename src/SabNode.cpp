@@ -2,14 +2,18 @@
 
 #include "SabNode.h"
 
+// Sabtraction: f(a, b) = a - b
 void SabNode::forwardProp() { m_val = in_1->get_val() - in_2->get_val(); }
 
+// Sabtraction derivateve: df/da = 1, df/db = -1
 void SabNode::backwardProp(bool first) {
 	if (first)m_grad = 1;
+	// Chain rule
 	double new_grad_1 = in_1->get_grad() + m_grad * 1;
 	double new_grad_2 = in_2->get_grad() - m_grad * 1;
 	in_1->set_grad(new_grad_1);
 	in_2->set_grad(new_grad_2);
+	// Recursively calling backwardProp for every node
 	in_1->backwardProp();
 	in_2->backwardProp();
 }
