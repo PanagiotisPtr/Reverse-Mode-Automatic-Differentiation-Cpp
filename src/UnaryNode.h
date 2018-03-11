@@ -15,7 +15,7 @@ public:
 		if (!prev->isUserNode()) delete prev;
 		else prev = nullptr;
 	}
-	// those functions can be pure virtual since BinaryNode class doens't itself represent an object (i.e it isn't supposed to be created and used itself as an object)
+	// those functions can be pure virtual since Unary class doens't itself represent an object (i.e it isn't supposed to be created and used itself as an object)
 	virtual void forwardProp() = 0;
 	virtual void backwardProp(bool first = false) = 0;
 
