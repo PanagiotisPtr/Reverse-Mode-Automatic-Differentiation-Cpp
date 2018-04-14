@@ -48,11 +48,11 @@ Node a("a");
 Node b("b");
 Node c("c");
 Graph g = c * ln(a + b);
-g.init({ { &x, 13 } });
+g.init({ { &a, 7 }, { &b, 5 }, { &c, 2 } });
 g.get_output();
-g.get_grad(&x);
+g.get_grad(&a);
 g.output_debug();
-g.grad_debug(&x);
+g.grad_debug(&a);
 ```
 
 ### Tests
